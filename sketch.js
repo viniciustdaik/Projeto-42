@@ -155,6 +155,9 @@ function handleBubbleCollision(bubbleGroup, bubble, bullet){
   for(var bubble of bubbleGroup){
     //for(var bullet of bulletGroup){
       if(bubble.isTouching(bullet)){
+        if (life > 0) {
+          score = score + 1;
+        }
         createExplosion(bubble);
         bullet.destroy();
         bubble.destroy();
@@ -169,9 +172,7 @@ function handleBubbleCollision(bubbleGroup, bubble, bullet){
     //}
   }
 
-  if (life > 0) {
-    score = score + 1;
-  }
+  
   
 
   //blast = createSprite(bullet.x + 60, bullet.y, 50, 50);
